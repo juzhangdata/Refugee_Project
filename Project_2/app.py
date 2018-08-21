@@ -1067,7 +1067,7 @@ session = Session()
 db = SQLAlchemy(app)
 @app.route('/')
 def home():
-    return render_template("index_bootstrap.html")
+    return render_template("index.html")
 
 #--------------------------------------------------------------------------------
 @app.route('/data')
