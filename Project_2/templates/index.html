@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 </head>
 
 <body>
@@ -17,9 +17,41 @@
             <p>Data Source: UNHCR</p>
         </div>
     </div>
-</div>
 
-<div id="map"></div>
+
+    <div id="map"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+            <h5>SELECT Year:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            <div id="sample-metadata" class="panel-body"></div>
+            </div>
+            <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Year MetaData</h3>
+            </div>
+            <div id="year-metadata" class="panel-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="bar1"></div>
+        </div>
+
+        <div class="col-md-6">
+            <div id="bar2"></div>
+        </div>
+    </div>
+
+    <hr>
+
+</div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
@@ -28,6 +60,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="../static/js/country_slider.js"></script>
+<script src="../static/js/app.js"></script>
 
 </body>
 

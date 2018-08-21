@@ -61,14 +61,17 @@ Plotly.d3.csv('https://raw.githubusercontent.com/juzhangdata/test_project_2/mast
 ]
 
   var layout = {
+
     title: 'Refugees Influx by Country 2012',
     geo:{
+      scope: 'europe',
+      projection: {
+        type:  'equirectangular'
+      },
       showframe: false,
-      showcoastlines: false,
-      projection:{
-          type: 'mercator'
-      }
+      showcoastlines: false
     },
+
     xaxis: {autorange: false},
     yaxis: {autorange: false},
     sliders: [{
@@ -82,12 +85,13 @@ Plotly.d3.csv('https://raw.githubusercontent.com/juzhangdata/test_project_2/mast
       }))
     }]
   };
-
-  Plotly.plot('map', {
+  var plotlyJSON = {
     data: data,
     layout: layout,
     frames: frames,
     config: {showLink: false}
-  });
+  }
+  console.log(plotlyJSON)
+  Plotly.plot('map', plotlyJSON);
   
 });
