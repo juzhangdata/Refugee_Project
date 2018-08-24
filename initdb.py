@@ -1,4 +1,4 @@
-from Belly_Button_Biodiversity.app import db
+from Project_2.app import db
 import os
 
 # db.drop_all()
