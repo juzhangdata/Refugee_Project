@@ -7,7 +7,30 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-
+<style>
+    /* css for Sankey Chart */
+    .node rect {
+      cursor: move;
+      fill-opacity: .9;
+      shape-rendering: crispEdges;
+    }
+  
+    .node text {
+      pointer-events: none;
+      text-shadow: 0 1px 0 #fff;
+      font-weight: bold;
+    }
+  
+    .link {
+      fill: none;
+      stroke: #000;
+      stroke-opacity: .2;
+    }
+  
+    .link:hover {
+      stroke-opacity: .5;
+    }
+  </style>
 <body>
 
 <div class="container">
@@ -51,11 +74,37 @@
     </div>
 
     <hr>
+    
+    <!-- Europe Sankey Chart html elements -->
+    <!-- <div class="row">
+        <h2 class="text-center">Refugee Influx Flow (2012 -2016) to EU Countries</h2>
+    </div> -->
+    <div class="row my-20"></div>
 
+    <div class="row align-center">
+        <div class="col-md-12">
+            <div class="well">
+                <h2 class="text-center">Refugee Influx Flow (2016) to EU Countries</h2>
+                <!-- <h5>Select Year:</h5>
+                <select id="year">
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016" selected="selected">2016</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+    <div class="row my-20"></div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-10">
+            <div id="sankey-chart"></div>
+        </div>
+    </div> 
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="sankey_basic" style="width: 900px; height: 300px;"></div>
 
 <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
@@ -65,6 +114,12 @@
 <script src="{{ url_for('static', filename='js/country_slider.js') }}"></script>
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
+<!-- scripts for Sankey chart -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!-- Sankey Plug-in -->
+<script src="{{ url_for('static', filename= 'js/sankey.js') }}"></script>
+<!-- script to build Sankey Chart -->
+<!-- <script src="{{ url_for('static', filename= 'js/sankey-chart-world.js') }}"></script> -->
+<script src="{{ url_for('static', filename= 'js/sankey-chart.js') }}"></script>
 </body>
-
 </html>
