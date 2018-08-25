@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+            <h1>European Refugee Project</h1>
+            <p>Data Source: UNHCR</p>
+        </div>
+    </div>
+
+
+    <div id="map"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+            <h5>SELECT Year:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+            <div id="sample-metadata" class="panel-body"></div>
+            </div>
+            <!-- <div class="panel panel-primary"> -->
+            <!-- <div class="panel-heading">
+                <h3 class="panel-title">Year MetaData</h3>
+            </div>
+            <div id="year-metadata" class="panel-body"></div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div id="bar1"></div>
+        </div>
+
+        <div class="col-md-6">
+            <div id="bar2"></div>
+        </div>
+    </div>
+    <div class="titleYel" style="margin-top: 0px;">Demographics of asylum seekers in the host country, 2016</div>"
+    <select id="country" class="select-ctrl" name="country"><option value="Austria">Austria</option><option value="Belgium">Belgium</option><option value="Bulgaria">Bulgaria</option><option value="Croatia">Croatia</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Denmark">Denmark</option><option value="Estonia">Estonia</option><option value="Finland">Finland</option><option value="France">France</option><option value="Germany">Germany</option><option value="Greece">Greece</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="Ireland">Ireland</option><option value="Italy">Italy</option><option value="Latvia">Latvia</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Malta">Malta</option><option value="Netherlands">Netherlands</option><option value="Norway">Norway</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Romania">Romania</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Spain">Spain</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="United Kingdom">United Kingdom</option></select>
+    <svg id="host" width="460" height="305"><g transform="translate(10,20)"><g class="y axis demographics" transform="translate(220, 0)" style="text-anchor: middle;"><g class="tick" transform="translate(0,229)" style="opacity: 1;"><line x2="6" y2="0"></line><text dy=".32em" x="9" y="0" style="text-anchor: start;">&lt;14</text></g><g class="tick" transform="translate(0,181)" style="opacity: 1;"><line x2="6" y2="0"></line><text dy=".32em" x="9" y="0" style="text-anchor: start;">14-17</text></g><g class="tick" transform="translate(0,133)" style="opacity: 1;"><line x2="6" y2="0"></line><text dy=".32em" x="9" y="0" style="text-anchor: start;">18-34</text></g><g class="tick" transform="translate(0,85)" style="opacity: 1;"><line x2="6" y2="0"></line><text dy=".32em" x="9" y="0" style="text-anchor: start;">35-64</text></g><g class="tick" transform="translate(0,37)" style="opacity: 1;"><line x2="6" y2="0"></line><text dy=".32em" x="9" y="0" style="text-anchor: start;">&gt;65</text></g><path class="domain" d="M6,0H0V265H6"></path></g><text x="0" y="10" style="font-family: zona_probold; fill: rgb(102, 102, 102);">Males</text><text x="390" y="10" style="font-family: zona_probold; fill: rgb(102, 102, 102);">Females</text><text x="231.57894736842107" y="10" style="font-family: zona_probold; fill: rgb(102, 102, 102); text-anchor: middle;">Age</text><rect class="left demBar14" x="142.1478631505448" y="217" width="60.094324349455206" height="30" style="opacity: 1;"></rect><rect class="left demBar4-17" x="184.2876867927601" y="169" width="17.9545007072399" height="30" style="opacity: 1;"></rect><rect class="left demBar8-34" x="117.51126474972725" y="121" width="84.73092275027275" height="30" style="opacity: 1;"></rect><rect class="left demBar5-64" x="6.085795370124901" y="73" width="196.1563921298751" height="30" style="opacity: 1;"></rect><rect class="left demBar65" x="114.97448398298265" y="25" width="87.26770351701735" height="30" style="opacity: 1;"></rect><rect class="right demBar14" x="255.515625" y="217" width="51.72838563608491" height="30" style="opacity: 1;"></rect><rect class="right demBar4-17" x="255.515625" y="169" width="15.380543110775704" height="30" style="opacity: 1;"></rect><rect class="right demBar8-34" x="255.515625" y="121" width="74.58490334723729" height="30" style="opacity: 1;"></rect><rect class="right demBar5-64" x="255.515625" y="73" width="184.484375" height="30" style="opacity: 1;"></rect><rect class="right demBar65" x="255.515625" y="25" width="104.89705354760514" height="30" style="opacity: 1;"></rect><text class="num" x="136.1478631505448" text-anchor="end" y="234">3,966,734</text><text class="num" x="178.2876867927601" text-anchor="end" y="186">1,185,149</text><text class="num" x="111.51126474972725" text-anchor="end" y="138">5,592,958</text><text class="num" x="18.0857953701249" text-anchor="start" y="90">12,947,982</text><text class="num" x="108.97448398298265" text-anchor="end" y="42">5,760,407</text><text class="numFem" y="234" x="313.2440106360849" text-anchor="start">3,743,180</text><text class="numFem" y="186" x="276.8961681107757" text-anchor="start">1,112,970</text><text class="numFem" y="138" x="336.1005283472373" text-anchor="start">5,397,128</text><text class="numFem" y="90" x="428" text-anchor="end">13,349,696</text><text class="numFem" y="42" x="366.41267854760514" text-anchor="start">7,590,582</text><g class="x axis demoL" transform="translate(0,265)"><g class="tick" transform="translate(202.2421875,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text></g><g class="tick" transform="translate(50.74646242880736,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">10M</text></g><path class="domain" d="M0,0V0H202.2421875V0"></path></g><g class="x axis demoR" transform="translate(0,265)"><g class="tick" transform="translate(255.515625,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text></g><g class="tick" transform="translate(393.7093149536888,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".71em" y="9" x="0" style="text-anchor: middle;">10M</text></g><path class="domain" d="M255.515625,0V0H440V0"></path></g><rect class="overlay" width="440" height="265"></rect></g></svg>
+
+    <hr>
+
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+
+<!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- <script src="../static/js/country_slider.js"></script> -->
+<!-- <script src="../static/js/app.js"></script> -->
+<script src="demographics.js"></script>
+
+</body>
+
+</html>
